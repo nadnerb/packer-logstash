@@ -9,4 +9,3 @@ curl -O http://download.elastic.co/logstash/logstash/logstash-$LOGSTASH_VERSION.
 
 tar xfz logstash-$LOGSTASH_VERSION.tar.gz
 mv logstash-$LOGSTASH_VERSION /usr/local/logstash
-

@@ -7,7 +7,7 @@
     "aws_instance_type": "t2.small",
     "ami_name_prefix": "logstash",
     "logstash_version": "1.5.0-rc3",
-    "consul_version": "1.5.0"
+    "consul_version": "0.5.0"
   },
   "builders": [{
     "type": "amazon-ebs",
@@ -45,13 +45,6 @@
             "LOGSTASH_VERSION={{user `logstash_version`}}"
         ],
       "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E '{{ .Path }}'"
-    }
-  ],
-  "post-processors": [
-    {
-      "type":"vagrant",
-      "output": "boxes/packer_{{.BuildName}}_{{.Provider}}.box",
-      "vagrantfile_template": "templates/VagrantFile.template"
     }
   ]
 }

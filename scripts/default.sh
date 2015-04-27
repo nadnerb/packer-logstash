@@ -2,5 +2,7 @@
 
 set -e
 
-sudo apt-get update -y
+# Updating and Upgrading dependencies
+apt-get update -y -qq > /dev/null
+apt-get upgrade -y -qq > /dev/null
 sudo apt-get install -y vim curl wget unzip screen

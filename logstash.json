@@ -7,7 +7,8 @@
     "aws_instance_type": "t2.small",
     "ami_name_prefix": "logstash",
     "logstash_version": "1.5.0-rc3",
-    "consul_version": "0.5.0"
+    "consul_version": "0.5.0",
+    "consul_template_version": "0.8.0"
   },
   "builders": [{
     "type": "amazon-ebs",
@@ -34,7 +35,8 @@
       "type": "shell",
       "script": "scripts/consul.sh",
       "environment_vars": [
-            "CONSUL_VERSION={{user `consul_version`}}"
+            "CONSUL_VERSION={{user `consul_version`}}",
+            "CONSUL_TEMPLATE_VERSION={{user `consul_template_version`}}"
         ],
       "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E '{{ .Path }}'"
     },

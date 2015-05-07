@@ -12,6 +12,8 @@ idea to join an existing consul cluster.
 packer build \
   -var 'aws_access_key=your_key' \
   -var 'aws_secret_key=your_secret' \
+  -var 'aws_vpc_id=your_vpc_id' \
+  -var 'aws_subnet_id=your_subnet_id' \
   logstash.json
 ```
 

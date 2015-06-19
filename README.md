@@ -25,11 +25,15 @@ packer build -var-file='packer_vars.json' logstash.json
 
 Extra variables exposed:
 
+* aws_source_ami (defaults to `ami-69631053`)
 * aws_region (defaults to `ap-southeast-2`)
 * aws_instance_type (defaults to `t2.small`)
+* aws_vpc_id (default)
+* aws_subnet_id (none)
 * ami_name_prefix (defaults to `logstash`)
-* elastic_version (defaults to `1.5.0-rc3`)
-* consul_version (defaults to `0.5.0`)
+* elastic_version (defaults to `1.5.1`)
+* consul_version (defaults to `0.5.2`)
+* consul_template_version (defaults to `0.10.0`)
 
 ###Troubleshooting
 

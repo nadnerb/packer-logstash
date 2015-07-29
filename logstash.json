@@ -8,7 +8,7 @@
     "aws_vpc_id": "",
     "aws_subnet_id": "",
     "ami_name_prefix": "logstash",
-    "logstash_version": "1.5.1",
+    "logstash_version": "1.5.3",
     "consul_version": "0.5.2",
     "consul_template_version": "0.10.0"
   },
@@ -22,7 +22,8 @@
     "source_ami": "{{user `aws_source_ami`}}",
     "instance_type": "{{user `aws_instance_type`}}",
     "ssh_username": "ubuntu",
-    "ami_name": "{{user `ami_name_prefix`}}-{{timestamp}}"
+    "ami_name": "{{user `ami_name_prefix`}}-{{timestamp}}",
+    "ami_regions": "{{user `aws_build_regions`}}"
   }],
   "provisioners": [
     {

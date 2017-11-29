@@ -5,7 +5,7 @@ set -e
 echo "Fetching Consul..."
 
 cd /tmp
-curl -L -o consul.zip https://dl.bintray.com/mitchellh/consul/${CONSUL_VERSION}_linux_amd64.zip
+curl -L -o consul.zip https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip
 
 echo "Installing Consul..."
 unzip consul.zip >/dev/null
@@ -16,8 +16,9 @@ sudo mkdir -p /mnt/consul
 sudo mkdir -p /etc/service
 
 echo "Fetching Consul template..."
-curl -L -o consul_template.tar.gz https://github.com/hashicorp/consul-template/releases/download/v${CONSUL_TEMPLATE_VERSION}/consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64.tar.gz
+curl -L -o consul_template.tar.gz https://releases.hashicorp.com/consul-template/${CONSUL_TEMPLATE_VERSION}/consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64.tgz
 
 echo "installing Consul template..."
 tar xfz consul_template.tar.gz
-sudo mv consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64 /opt/consul-template
+sudo mv consul-template /usr/local/bin/consul-template
+sudo mkdir -p /etc/consul-template.d

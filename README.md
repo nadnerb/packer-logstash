@@ -25,16 +25,16 @@ packer build -var-file='packer_vars.json' logstash.json
 
 Extra variables exposed:
 
-* aws_source_ami (defaults to `ami-69631053`)
+* aws_source_ami (defaults to `ami-cab258a8` for Ubuntu 16.04.3 LTS)
 * aws_region (defaults to `ap-southeast-2`)
 * aws_instance_type (defaults to `t2.small`)
 * aws_vpc_id (default)
 * aws_subnet_id (none)
 * ami_name_prefix (defaults to `logstash`)
-* elastic_version (defaults to `1.5.1`)
-* consul_version (defaults to `0.5.2`)
-* consul_template_version (defaults to `0.10.0`)
+* logstash_version (defaults to `6.0.0`)
+* consul_version (defaults to `1.0.1`)
+* consul_template_version (defaults to `0.19.4`)
 
 ###Troubleshooting
 
-* Make sure you have set the AWS region and the correct source AMI (Ubuntu 14.x recommended) for that region
+* Make sure you have set the AWS region and the correct source AMI (Ubuntu 16.x recommended) for that region

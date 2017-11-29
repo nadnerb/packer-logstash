@@ -25,7 +25,7 @@ packer build -var-file='packer_vars.json' logstash.json
 
 Extra variables exposed:
 
-* aws_source_ami (defaults to `ami-69631053` for Ubuntu 16.04.3 LTS)
+* aws_source_ami (defaults to `ami-cab258a8` for Ubuntu 16.04.3 LTS)
 * aws_region (defaults to `ap-southeast-2`)
 * aws_instance_type (defaults to `t2.small`)
 * aws_vpc_id (default)
